@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 import React from 'react';
 
-export const Categories: React.FC = ({ className }) => {
-  const cr = [
+export const Categories: React.FC<{ className: string }> = ({ className }) => {
+  const categories = [
     'кроссовка1',
     'кроссовка1',
     'кроссовка1',
@@ -14,7 +14,7 @@ export const Categories: React.FC = ({ className }) => {
   const activeInd = 0;
   return (
     <div className={cn('inline-flex gap-1 bg-gray-50 p-1 rounded-2xl', className)}>
-      {cr.map((ct, ind) => (
+      {categories.map((categori, ind) => (
         <a
           className={cn(
             'flex items-center font-bold h-11 rounded-2xl px-5',
@@ -22,7 +22,7 @@ export const Categories: React.FC = ({ className }) => {
           )}
           key={ind}
         >
-          <button>{ct}</button>
+          <button>{categori}</button>
         </a>
       ))}
     </div>
