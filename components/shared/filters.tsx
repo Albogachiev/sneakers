@@ -78,7 +78,11 @@ export const Filters: React.FC<Props> = ({ className }) => {
         className='mt-5'
         limit={6}
         // defaultItems={}
-        items={[]}
+        items={[
+          { text: 'красные', value: 'красные' },
+          { text: 'белые', value: 'белые' },
+          { text: 'черные', value: 'черные' },
+        ]}
         // loading={}
         // onClickCheckbox={}
         // selected={}
