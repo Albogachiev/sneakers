@@ -27,13 +27,21 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
   limit = 5,
   searchInputPlaceholder = 'Поиск...',
   className,
-  loading,
+  // loading,
   onClickCheckbox,
   selected,
   name,
 }) => {
   const [showAll, setShowAll] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState('');
+
+  const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
+
+  const list = showAll
+    ? items.filter((item) => item.text.toLowerCase().includes(searchValue.toLocaleLowerCase()))
+    : (defaultItems || items).slice(0, limit);
 
   return (
     <div className={className}>
