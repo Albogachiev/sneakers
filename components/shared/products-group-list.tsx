@@ -6,10 +6,17 @@ import { useIntersection } from 'react-use';
 import { Title } from './title';
 import { cn } from '@/lib/utils';
 import { ProductCard } from './product-card';
+import { useCategoryStore } from '@/store/category';
 
 interface Props {
   title: string;
-  items: any[];
+  items: {
+    id: number;
+    name: string;
+    sneakersType: { type: string }[];
+    sneakersPrice: { price: number }[];
+    imageUrl: string;
+  }[];
   categoryId: number;
   className?: string;
   listClassName?: string;
@@ -22,7 +29,7 @@ export const ProductsGroupList: React.FC<Props> = ({
   categoryId,
   className,
 }) => {
-  // const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);
+  const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
     threshold: 0.4,
@@ -30,7 +37,7 @@ export const ProductsGroupList: React.FC<Props> = ({
 
   React.useEffect(() => {
     if (intersection?.isIntersecting) {
-      // setActiveCategoryId(categoryId);
+      setActiveCategoryId(categoryId);
     }
   }, [categoryId, intersection?.isIntersecting, title]);
 
@@ -39,13 +46,13 @@ export const ProductsGroupList: React.FC<Props> = ({
       <Title text={title} size='lg' className='font-extrabold mb-5' />
 
       <div className={cn('grid grid-cols-3 gap-[50px]', listClassName)}>
-        {items.map((product, i) => (
+        {items.map((product) => (
           <ProductCard
             key={product.id}
             id={product.id}
             name={product.name}
             imageUrl={product.imageUrl}
-            price={product.items[0].price}
+            price={product.sneakersPrice[0].price}
             sneakersType={product.sneakersType}
           />
         ))}
