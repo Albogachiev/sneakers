@@ -6,14 +6,13 @@ import { useCategoryStore } from '@/store/category';
 
 export const Categories: React.FC<{ className: string }> = ({ className }) => {
   const categories = [
-    { id: 1, name: 'Зимние кросовки' },
-    { id: 2, name: 'Летние кросовки' },
-    { id: 3, name: 'Походные кросовки' },
-    { id: 4, name: 'Все' },
-    { id: 5, name: 'кроссовка5' },
-    { id: 6, name: 'кроссовка6' },
+    { id: 1, name: 'Все' },
+    { id: 2, name: 'Походные кросовки' },
+    { id: 3, name: 'Летние кросовки' },
+    { id: 4, name: 'Зимние кросовки' },
   ];
   const categoryActiveId = useCategoryStore((state) => state.activeId);
+
   return (
     <div className={cn('inline-flex gap-1 bg-gray-50 p-1 rounded-2xl', className)}>
       {categories.map(({ name, id }) => (

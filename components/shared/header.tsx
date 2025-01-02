@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '../ui';
 import { ArrowRight, ShoppingCart, User } from 'lucide-react';
-
+import logo from '@/public/assets/images/logo.jpg';
 interface Props {
   className?: string;
 }
@@ -17,7 +17,7 @@ export const Header: React.FC<Props> = ({ className }) => {
         {/* Левая часть */}
         <Link href='/'>
           <div className='flex items-center gap-4'>
-            <Image src='/logo.png' alt='Logo' width={35} height={35} />
+            <Image src={logo} alt='Logo' width={150} height={150} />
             <div>
               <h1 className='text-2xl uppercase font-black'>КРОССОВКИ</h1>
               <p className='text-sm text-gray-400 leading-3'>от оригинальных брендов</p>

@@ -47,7 +47,7 @@ export default function Home() {
               />
 
               <ProductsGroupList
-                categoryId={1}
+                categoryId={2}
                 title='Походные кросовки'
                 items={[
                   {
@@ -75,7 +75,7 @@ export default function Home() {
               />
 
               <ProductsGroupList
-                categoryId={1}
+                categoryId={3}
                 title='Летние кросовки'
                 items={[
                   {
@@ -103,7 +103,7 @@ export default function Home() {
               />
 
               <ProductsGroupList
-                categoryId={1}
+                categoryId={4}
                 title='Зимние кросовки'
                 items={[
                   {

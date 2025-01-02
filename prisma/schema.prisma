@@ -1,11 +1,10 @@
-generator client {
+generator client { 
     provider = "prisma-client-js"
 }
 
 datasource db {
-    provider  = "postgresql"
-    url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-    directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
 }
 
 model User {
@@ -43,7 +42,7 @@ model Product {
     name     String
     imageUrl String
 
-    ingredients Ingredient[]
+    typeProducts typeProduct[]
     items       ProductItem[]
 
     category   Category @relation(fields: [categoryId], references: [id])
@@ -58,7 +57,7 @@ model ProductItem {
 
     price     Int
     size      Int?
-    pizzaType Int?
+    color Int?
 
     cartItems CartItem[]
 
@@ -66,7 +65,7 @@ model ProductItem {
     productId Int
 }
 
-model Ingredient {
+model typeProduct {
     id Int @id @default(autoincrement())
 
     name     String
@@ -107,7 +106,7 @@ model CartItem {
 
     quantity Int @default(1)
 
-    ingredients Ingredient[]
+    typeProducts typeProduct[]
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt

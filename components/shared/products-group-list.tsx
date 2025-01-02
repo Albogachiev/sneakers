@@ -32,7 +32,7 @@ export const ProductsGroupList: React.FC<Props> = ({
   const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
-    threshold: 0.4,
+    threshold: 1,
   });
 
   React.useEffect(() => {
@@ -44,7 +44,6 @@ export const ProductsGroupList: React.FC<Props> = ({
   return (
     <div className={className} id={title} ref={intersectionRef}>
       <Title text={title} size='lg' className='font-extrabold mb-5' />
-
       <div className={cn('grid grid-cols-3 gap-[50px]', listClassName)}>
         {items.map((product) => (
           <ProductCard
@@ -52,7 +51,7 @@ export const ProductsGroupList: React.FC<Props> = ({
             id={product.id}
             name={product.name}
             imageUrl={product.imageUrl}
-            price={product.sneakersPrice[0].price}
+            sneakersPrice={product.sneakersPrice}
             sneakersType={product.sneakersType}
           />
         ))}
