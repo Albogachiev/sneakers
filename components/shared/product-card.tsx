@@ -7,16 +7,16 @@ import { Plus } from 'lucide-react';
 interface Props {
   id: number;
   name: string;
-  price: number;
   imageUrl: string;
-  sneakersType: string[];
+  sneakersType: { type: string }[];
+  sneakersPrice: { price: number }[];
   className?: string;
 }
 
 export const ProductCard: React.FC<Props> = ({
   id,
   name,
-  price,
+  sneakersPrice,
   imageUrl,
   sneakersType,
   className,
@@ -30,11 +30,11 @@ export const ProductCard: React.FC<Props> = ({
 
         <Title text={name} size='sm' className='mb-1 mt-3 font-bold' />
 
-        <p className='text-sm text-gray-400'>{sneakersType.map((type) => type.name).join(', ')}</p>
+        <p className='text-sm text-gray-400'>{sneakersType.map((type) => type.type).join(', ')}</p>
 
         <div className='flex justify-between items-center mt-4'>
           <span className='text-[20px]'>
-            от <b>{price} ₽</b>
+            от <b>{sneakersPrice[0].price} ₽</b>
           </span>
 
           <Button variant='secondary' className='text-base font-bold'>
