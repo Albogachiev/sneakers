@@ -60,7 +60,7 @@ async function up() {
     data: {
       name: 'летние кроссовки',
       imageUrl:
-        'https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp',
+        'https://avatars.mds.yandex.net/i?id=2d667b5a968a4a2308d49d39652c1726_l-5220659-images-thumbs&n=13',
       categoryId: 1,
       typeProducts: {
         connect: _typeProducts.slice(0, 5),
@@ -72,7 +72,7 @@ async function up() {
     data: {
       name: 'зимняя обувь',
       imageUrl:
-        'https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp',
+        'https://avatars.mds.yandex.net/i?id=b2884d8c6eee0b2c6ce04689002a7cba5cb38d81-9671619-images-thumbs&n=13',
       categoryId: 1,
       typeProducts: {
         connect: _typeProducts.slice(5, 10),
@@ -84,7 +84,7 @@ async function up() {
     data: {
       name: 'беговые кроссовки',
       imageUrl:
-        'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp',
+        'https://avatars.mds.yandex.net/i?id=528313b671e279b1e3f5bc8c2d7600596aebb791-12527723-images-thumbs&n=13',
       categoryId: 1,
       typeProducts: {
         connect: _typeProducts.slice(10, 40),
@@ -159,64 +159,8 @@ async function up() {
     },
   });
 
-  await prisma.story.createMany({
-    data: [
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/xep/xzh/zmc/cr4gcw0aselwvf628pbmj3j/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3101815496',
-      },
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/km2/9gf/jrn/sb7ls1yj9fe5bwvuwgym73e/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3074015640',
-      },
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/quw/acz/zf5/zu37vankpngyccqvgzbohj1/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=1336215020',
-      },
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/7oc/5nf/ipn/oznceu2ywv82tdlnpwriyrq/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=38903958',
-      },
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/q0t/flg/0ph/xt67uw7kgqe9bag7spwkkyw/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=2941222737',
-      },
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/lza/rsp/2gc/xrar8zdspl4saq4uajmso38/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=4207486284',
-      },
-    ],
-  });
-
-  await prisma.storyItem.createMany({
-    data: [
-      {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/dd/yj/sx/oqx9feuljibke3mknab7ilb35t.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/jv/sb/fh/io7c5zarojdm7eus0trn7czdet.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/ts/p9/vq/zktyxdxnjqbzufonxd8ffk44cb.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/ur/uq/le/9ufzwtpdjeekidqq04alfnxvu2.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE',
-      },
-    ],
-  });
+  // await prisma.story.createMany({});
+  // await prisma.storyItem.createMany({});
 }
 
 async function down() {
