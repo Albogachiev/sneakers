@@ -5,13 +5,13 @@ import { useSet } from 'react-use';
 interface ReturnProps {
   typeProduct: typeProduct[];
   loading: boolean;
-  selectedIds: Set<string>;
+  selected: Set<string>;
   onAddId: (id: string) => void;
 }
 export const useFiltertypeProducts = (): ReturnProps => {
   const [typeProduct, setTypeProducts] = React.useState<typeProduct[]>([]);
   const [loading, setLoading] = React.useState(false);
-  const [selectedIds, { add, has, toggle }] = useSet<string>(new Set([]));
+  const [selected, { add, has, toggle }] = useSet<string>(new Set([]));
   React.useEffect(() => {
     async function getTypeProdects() {
       try {
@@ -26,5 +26,5 @@ export const useFiltertypeProducts = (): ReturnProps => {
     }
     getTypeProdects();
   }, []);
-  return { typeProduct, loading, onAddId: toggle, selectedIds };
+  return { typeProduct, loading, onAddId: toggle, selected };
 };
