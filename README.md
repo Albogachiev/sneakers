@@ -17,3 +17,5 @@
 - Lucide (иконки)
 
 ---
+
+![ссылка на мой канал](https://raw.githubusercontent.com/Albogachiev/sneakers/refs/heads/main/image.png)
